@@ -3,7 +3,7 @@
 """
 Created on Thu Nov 11 10:00:35 2021
 
-@author: katherinedelgado and Erin Barnhart
+@author: Ike Ogbonna, Katherine Delgado, and Erin Barnhart
 """
 import glob
 import csv
