@@ -4,7 +4,7 @@
 """
 Created on Fri Apr  8 12:39:08 2022
 
-@author: katherinedelgado and Erin Barnhart
+@author: Katherine Delgado and Erin Barnhart
 """
 import csv
 import alignment 
