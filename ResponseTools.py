@@ -11,7 +11,7 @@ import numpy
 from pylab import *
 import scipy.ndimage as ndimage
 from PIL import Image, ImageSequence
-import ResponseClassSimple_EB
+import ResponseClassSimple
 import skimage.util as sku
 import skimage.transform as skt
 from pystackreg import StackReg
@@ -231,7 +231,7 @@ def extract_response_objects(image_file,mask_file,stim_file,input_dict):
 	#load response objects
 	response_objects = []
 	for r,n in zip(responses,num):
-		ro = ResponseClassSimple_EB.Response(F=r,stim_time = rt,stim_state = ss,ROI_num = n,stim_type = st)
+		ro = ResponseClassSimple.Response(F=r,stim_time = rt,stim_state = ss,ROI_num = n,stim_type = st)
 		ro.sample_name = input_dict['sample_name']
 		ro.reporter_name = input_dict['reporter_name']
 		ro.driver_name = input_dict['driver_name']
