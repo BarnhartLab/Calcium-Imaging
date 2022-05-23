@@ -3,7 +3,7 @@
 """
 Created on Wed Nov 10 10:09:32 2021
 
-@author: katherinedelgado and Erin Barnhart
+@author: Katherine Delgado and Erin Barnhart
 """
 import numpy as numpy
 from scipy import signal
