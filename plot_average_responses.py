@@ -1,30 +1,30 @@
 import numpy
-import ResponseClassSimple_EB
-import ResponseTools_V4
+import ResponseClassSimple
+import ResponseTools
 import os
 from pylab import *
 
-parent_dir = '/Users/katherinedelgado/Desktop/Baseline_Testing_2/'
+parent_dir = '//'
 plot_dir = parent_dir+'plots/'
 output_dir = parent_dir+'measurements/'
 
 st_index = 5
 
 input_csv = parent_dir+'inputs.csv'
-rows,dict_header = ResponseTools_V4.read_csv_file(input_csv)
+rows,dict_header = ResponseTools.read_csv_file(input_csv)
 
 ALL = []
 for row in rows[:]:
-	input_dict = ResponseTools_V4.get_input_dict(row,dict_header)
+	input_dict = ResponseTools.get_input_dict(row,dict_header)
 	if input_dict['include']=='TRUE':
 		print('including ' + input_dict['sample_name'] + ' ' + input_dict['reporter_name'] + ' ' + input_dict['stimulus_name'])
 		sample_dir = parent_dir+input_dict['sample_name']
 		input_file = sample_dir+'/measurements/'+input_dict['ch1_name']+'-average.csv'
-		data,data_header = ResponseTools_V4.read_csv_file(input_file)
+		data,data_header = ResponseTools.read_csv_file(input_file)
 		for d in data:
 			ALL.append(d)
 		out_name = input_dict['ch1_name']
-ResponseTools_V4.write_csv(ALL,data_header,output_dir+out_name+'-average-ALL.csv')
+ResponseTools.write_csv(ALL,data_header,output_dir+out_name+'-average-ALL.csv')
 
 A = numpy.asarray(ALL)
 A = numpy.asarray(A[:,st_index:],dtype = float)
