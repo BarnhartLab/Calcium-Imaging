@@ -32,7 +32,7 @@ for row in rows:
 	time_interval = float(input_dict['time_interval'])
 	gt_index = int(input_dict['gt_index'])
 
-	stim_data,stim_data_OG,dataheader = ResponseTools_V4.count_frames(stim_file,gt_index = gt_index)
+	stim_data,stim_data_OG,dataheader = ResponseTools.count_frames(stim_file,gt_index = gt_index)
 	ResponseTools.find_dropped_frames(frames,time_interval,stim_data,stim_data_OG,gt_index)
 
 	if input_dict['verbose']=='TRUE':
